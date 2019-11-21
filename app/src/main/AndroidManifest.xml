@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GetOutfitActivity"></activity>
+        <activity android:name=".LaundryBasket"></activity>
+        <activity android:name=".Button5" />
+        <activity android:name=".GetOutfitActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +29,7 @@
             android:name=".MyWardrobe"
             android:label="@string/title_activity_my_wardrobe"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

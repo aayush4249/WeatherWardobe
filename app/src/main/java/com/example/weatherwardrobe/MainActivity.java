@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
 
         // getOut
         final Button intentGetOutfit = findViewById(R.id.get_outfit_btn);
+        final Button intentMyWardrobe = findViewById(R.id.my_wardrobe_button);
+        final Button intentButton5 = findViewById(R.id.button5);
+        final Button intentLaundryBasket = findViewById(R.id.laundry_button);
         intentGetOutfit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,6 +58,32 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        intentMyWardrobe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MyWardrobe.class);
+                startActivity(intent);
+            }
+        });
+
+        intentButton5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Button5.class);
+                startActivity(intent);
+            }
+        });
+
+        intentLaundryBasket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LaundryBasket.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     private class ForecastQuery extends AsyncTask<String, Integer, String> {
