@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.weatherwardrobe">
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -23,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".getOutfit"
+            android:name=".GetOutfit"
             android:label="@string/title_activity_get_outfit"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
