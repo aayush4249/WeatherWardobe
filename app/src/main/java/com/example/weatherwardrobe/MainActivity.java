@@ -189,9 +189,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String a) {
             imageView.setImageBitmap(picture);
-            current_temp.setText(currentTemp + "C\u00b0");
-            min_temp.setText(minTemp + "C\u00b0");
-            max_temp.setText(maxTemp + "C\u00b0");
+            current_temp.setText("Current Temp: " + currentTemp + "C\u00b0");
+            min_temp.setText("Minimum Temp: " + minTemp + "C\u00b0");
+            max_temp.setText("Maximum Temp: " + maxTemp + "C\u00b0");
         }
     }
 }
