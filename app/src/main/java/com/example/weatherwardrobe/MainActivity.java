@@ -8,13 +8,19 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Xml;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import org.xmlpull.v1.XmlPullParser;
 
@@ -34,11 +40,28 @@ public class MainActivity extends AppCompatActivity {
     TextView min_temp;
     TextView max_temp;
 
+    public boolean onCreateOptionsMenu (Menu m){
+        getMenuInflater().inflate(R.menu.toolbar_menu, m );
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem mi){
+        int id = mi.getItemId();
+        if (id == R.id.about){
+            Toast toast = Toast.makeText(getApplicationContext(), "Authors: Brian Tiner, Adam Gumieniak, Aayush Sheth, Dylan Clarry, Brian Mietkiewicz\nVersion: 1.0", Toast.LENGTH_LONG);
+            toast.show();
+        }
+        else if(id == R.id.guide){
+            Intent intent = new Intent(MainActivity.this, GuideActivity.class);
+            startActivity(intent);
+        }
+        return true;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         current_temp = findViewById(R.id.temp);
         min_temp = findViewById(R.id.min);
         max_temp = findViewById(R.id.max);
