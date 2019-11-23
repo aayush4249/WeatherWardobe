@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LaundryBasket"></activity>
-        <activity android:name=".Button5" />
+        <activity android:name=".AccountActivity" />
         <activity android:name=".GetOutfitActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.util.Xml;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         // getOut
         final Button intentGetOutfit = findViewById(R.id.get_outfit_btn);
         final Button intentMyWardrobe = findViewById(R.id.my_wardrobe_button);
-        final Button intentButton5 = findViewById(R.id.button5);
+        final ImageButton intentAccount = findViewById(R.id.account);
         final Button intentLaundryBasket = findViewById(R.id.laundry_button);
         intentGetOutfit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,10 +68,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        intentButton5.setOnClickListener(new View.OnClickListener() {
+        intentAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Button5.class);
+                Intent intent = new Intent(MainActivity.this, AccountActivity.class);
                 startActivity(intent);
             }
         });
