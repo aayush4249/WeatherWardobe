@@ -40,6 +40,13 @@ public class MainActivity extends AppCompatActivity {
     TextView min_temp;
     TextView max_temp;
 
+    public void refresh(View v){
+        ForecastQuery f = new ForecastQuery();
+        f.execute();
+        Snackbar.make(v, "Weather has been updated", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
+    }
+
     public boolean onCreateOptionsMenu (Menu m){
         getMenuInflater().inflate(R.menu.toolbar_menu, m );
         return true;

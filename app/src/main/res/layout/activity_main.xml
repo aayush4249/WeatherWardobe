@@ -63,6 +63,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="44dp"
         android:text="@string/refresh"
+        android:onClick="refresh"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/min"
         tools:ignore="MissingConstraints" />
