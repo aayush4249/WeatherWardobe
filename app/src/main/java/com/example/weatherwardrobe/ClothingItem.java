@@ -9,10 +9,16 @@ public class ClothingItem {
     private boolean isClean;
 
     // constructor sets attributes
-    public ClothingItem(long id, Byte[] byteArr, String type, boolean isClean) {
+    public ClothingItem(long id, Byte[] byteArr, String type, int isCleanInt) {
         this.id = id;
         this.byteArr = byteArr;
         this.type = type;
+
+        // int to bool
+        boolean isClean = true;
+        if(isCleanInt == 0) {
+            isClean = false;
+        }
         this.isClean = isClean;
     }
 
