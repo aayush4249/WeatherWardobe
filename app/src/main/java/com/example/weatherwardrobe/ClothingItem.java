@@ -1,68 +1,76 @@
 package com.example.weatherwardrobe;
 
 public class ClothingItem {
-
-    // create object attributes
     private long id;
-    private byte[] byteArr;
+    private String item ;
+    private byte[] img ; // DELETE THIS AFTER
+    private String colour;
     private String type;
-    private boolean isClean;
+    private int isClean;
+    private String description;
 
-    // constructor sets attributes
-    public ClothingItem(long id, byte[] byteArr, String type, int isCleanInt) {
-        this.id = id;
-        this.byteArr = byteArr;
-        this.type = type;
-
-        // int to bool
-        boolean isClean = true;
-        if(isCleanInt == 0) {
-            isClean = false;
-        }
-        this.isClean = isClean;
-    }
-
-    // get function for id
     public long getId() {
-        return this.id;
+        return id;
     }
 
-    // ==========
-    // GETTERS
-    // ==========
-
-    // get function for byte array
-    public byte[] getByteArr() {
-        return this.byteArr;
+    public ClothingItem () {}
+    public  ClothingItem (String name, byte[] img, String colour, String type, int isClean, String desc) {
+        this.item = name ;
+        this.img = img;
+        this.colour = colour;
+        this.type = type;
+        this.isClean = isClean;
+        this.description = desc;
     }
-
-    // get function for type
-    public String getType() {
-        return this.type;
+    public void setId(long id) {
+        this.id = id;
     }
-
-    // get function for is clean
-    public boolean getIsClean() {
-        return this.isClean;
+    public void setImg(byte[] img) {
+        this.img = img;
     }
-
-    // ==========
-    // SETTERS
-    // ==========
-
-    // set function for type
-    public void setByteArr(byte[] byteArr) {
-        this.byteArr = byteArr;
+    public void setColour(String colour) {
+        this.colour = colour;
     }
-
-    // set function for type
     public void setType(String type) {
         this.type = type;
     }
-
-    // set function for is clean
-    public void setIsClean(boolean isClean) {
+    public void setIsClean(int isClean) {
         this.isClean = isClean;
     }
+    public void setDescription(String desc) {
+        this.description = desc;
+    }
 
+
+    public String getItem() {
+        return item;
+    }
+
+    public byte[] getImg() {
+        return img;
+    }
+
+    public String getColour() {
+        return colour;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public int getIsClean() {
+        return isClean;
+    }
+
+    public String getDescription(){
+        return description;
+    }
+
+    public void setItem(String item) {
+        this.item = item;
+    } // DELETE THIS AFTER
+    public String toString () {
+        return item + "  " + id;
+    }
 }
+

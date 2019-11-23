@@ -37,8 +37,7 @@ public class ItemsDataSource {
         dbHelper.close();
     }
 
-
-    public Item createItem(Item item) {
+    public ClothingItem createItem(ClothingItem item) {
         ContentValues values = new ContentValues();
         values.put(SQLiteHelper.COLUMN_ITEM, item.getItem());
         values.put(SQLiteHelper.COLUMN_COLOUR, item.getColour());
@@ -53,17 +52,13 @@ public class ItemsDataSource {
                 allItems, SQLiteHelper.COLUMN_ID + " = " + insertId, null,
                 null, null, null);
         cursor.moveToFirst();
-        Item newItem = cursorToItem(cursor);
-
-        // Log the item stored
-        Log.d(TAG, "item = " + cursorToItem(cursor).toString()
-                + " insert ID = " + insertId);
+        ClothingItem newItem = cursorToItem(cursor);
 
         cursor.close();
         return newItem;
     }
 
-    public void deleteItem(Item item) {
+    public void deleteItem(ClothingItem item) {
         long id = item.getId();
         Log.d(TAG, "delete item = " + id);
         System.out.println("Item deleted with id: " + id);
@@ -74,22 +69,18 @@ public class ItemsDataSource {
     }
 
     public void deleteAllItems() {
-        System.out.println("Item deleted all");
-        Log.d(TAG, "delete all = ");
-
         database.delete(SQLiteHelper.TABLE_ITEMS, null, null);
     }
 
-    public List<Item> getAllItem() {
-        List<Item> items = new ArrayList<>();
+    /*public List<ClothingItem> getAllItem() {
+        List<ClothingItem> items = new ArrayList<>();
 
         Cursor cursor = database.query(SQLiteHelper.TABLE_ITEMS,
                 allItems, null, null, null, null, null);
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            Item item = cursorToItem(cursor);
-            Log.d(TAG, "get item = " + cursorToItem(cursor).toString());
+            ClothingItem item = cursorToItem(cursor);
             items.add(item);
             cursor.moveToNext();
         }
@@ -98,10 +89,41 @@ public class ItemsDataSource {
         return items;
     }
 
+    public List<ClothingItem> getDirtyItems(){
+        List<ClothingItem> items = new ArrayList<>();
+        String sql = "SELECT * FROM items WHERE isClean = 0";
+        Cursor cursor = database.rawQuery(sql, null);
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            ClothingItem item = cursorToItem(cursor);
+            items.add(item);
+            cursor.moveToNext();
+        }
+        // Make sure to close the cursor
+        cursor.close();
+        return items;
+    }*/
+
+    public ArrayList<ClothingItem> getItems(String sql){
+        ArrayList<ClothingItem> items = new ArrayList<>();
+        Cursor cursor = database.rawQuery(sql, null);
+
+        cursor.moveToFirst();
+
+        while (!cursor.isAfterLast()) {
+            ClothingItem item = cursorToItem(cursor);
+            items.add(item);
+            cursor.moveToNext();
+        }
+
+        // Make sure to close the cursor
+        cursor.close();
+        return items;
+    }
+
 
     public long count () {
-
-
         long count = DatabaseUtils.queryNumEntries(database, SQLiteHelper.TABLE_ITEMS);
         return count;
     }
@@ -122,8 +144,8 @@ public class ItemsDataSource {
 //    }
 
 
-    private Item cursorToItem(Cursor cursor) {
-        Item item = new Item();
+    private ClothingItem cursorToItem(Cursor cursor) {
+        ClothingItem item = new ClothingItem();
 
 
 //        Log.d(TAG, "item.getImg = " + imgIndex);

@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".LaundryBasket">
 
     <Button
         android:id="@+id/clean"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="clear_basket"/>
+        android:onClick="clear_basket"
+        android:text="Clean Laundry Basket" />
 
     <ListView
         android:id="@+id/laundry_list"
