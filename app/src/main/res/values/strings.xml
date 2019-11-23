@@ -11,4 +11,15 @@
 
     <!-- Get Outfit -->
     <string name="get_outfit_btn">Get Outfit</string>
+
+
+    <!-- Account -->
+    <string name="Location">Location: </string>
+    <string name="name">Name: </string>
+    <string name="detect_location">Detect Location</string>
+    <string name="set_location">Set Location</string>
+
+    <!-- Location Dialog Box -->
+    <string name="dialog_title">Set Location</string>
+    <string name="hint">Enter Location</string>
 </resources>
