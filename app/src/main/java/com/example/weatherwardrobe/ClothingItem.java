@@ -4,12 +4,12 @@ public class ClothingItem {
 
     // create object attributes
     private long id;
-    private Byte[] byteArr;
+    private byte[] byteArr;
     private String type;
     private boolean isClean;
 
     // constructor sets attributes
-    public ClothingItem(long id, Byte[] byteArr, String type, int isCleanInt) {
+    public ClothingItem(long id, byte[] byteArr, String type, int isCleanInt) {
         this.id = id;
         this.byteArr = byteArr;
         this.type = type;
@@ -32,7 +32,7 @@ public class ClothingItem {
     // ==========
 
     // get function for byte array
-    public Byte[] getByteArr() {
+    public byte[] getByteArr() {
         return this.byteArr;
     }
 
@@ -51,7 +51,7 @@ public class ClothingItem {
     // ==========
 
     // set function for type
-    public void setByteArr(Byte[] byteArr) {
+    public void setByteArr(byte[] byteArr) {
         this.byteArr = byteArr;
     }
 

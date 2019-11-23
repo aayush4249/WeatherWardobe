@@ -6,11 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".LaundryBasket">
 
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/clean"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="clear_basket"/>
 
-        />
+    <ListView
+        android:id="@+id/laundry_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
