@@ -19,8 +19,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:layout_width="393dp"
-        android:layout_height="506dp"
+        android:layout_width="365dp"
+        android:layout_height="628dp"
         android:layout_marginStart="8dp"
         android:text="Weather Wardrobe is an application to help you decide what to wear based on the
 current weather. The main interface displays to you the current weather and provides buttons to navigate
@@ -30,7 +30,8 @@ launches the interface that takes you step by step through the outfit selection 
 brings you to an interface where you can upload your clothes to select outfits from. The Laundry Basket button
 brings you to an interface where you can see which clothes you have already worn and can be cleared once those
 clothes are cleaned. The Account button lets you see and edit your account information"
-        android:textSize="20dp"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
