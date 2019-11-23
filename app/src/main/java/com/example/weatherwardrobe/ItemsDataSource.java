@@ -122,6 +122,13 @@ public class ItemsDataSource {
         return items;
     }
 
+    public void clear_basket(){
+        ContentValues values = new ContentValues();
+        values.put(SQLiteHelper.COLUMN_ISCLEAN, 1);
+        String sql = "SELECT * FROM items WHERE isClean = 0";
+        database.update(SQLiteHelper.TABLE_ITEMS, values, sql, null);
+    }
+
 
     public long count () {
         long count = DatabaseUtils.queryNumEntries(database, SQLiteHelper.TABLE_ITEMS);

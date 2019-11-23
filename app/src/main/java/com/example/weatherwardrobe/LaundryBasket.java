@@ -45,7 +45,9 @@ public class LaundryBasket extends AppCompatActivity {
     }
 
     public void clear_basket(View v){
-
+        dh.clear_basket();
+        clothingItems.clear();
+        laundryAdapter.notifyDataSetChanged();
     }
 
     private class LaundryListAdapter extends ArrayAdapter<ClothingItem> {
