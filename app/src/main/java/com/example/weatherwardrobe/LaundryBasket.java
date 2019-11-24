@@ -54,9 +54,9 @@ public class LaundryBasket extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 positionInArray = position;
                 AlertDialog.Builder builder = new AlertDialog.Builder(LaundryBasket.this);
-                builder.setMessage("Do you want to delete this item");
-                builder.setTitle("Delete Item");
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                builder.setMessage(R.string.laundry_dialog_message);
+                builder.setTitle(R.string.laundry_dialog_title);
+                builder.setPositiveButton(R.string.laundry_dialog_pos, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         long itemId = clothingItems.get((int)positionInArray).getId();
                         dh.clear_item(itemId);
@@ -64,7 +64,7 @@ public class LaundryBasket extends AppCompatActivity {
                         laundryAdapter.notifyDataSetChanged();
                     }
                 });
-                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton(R.string.laundry_dialog_neg, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
 
                     }
