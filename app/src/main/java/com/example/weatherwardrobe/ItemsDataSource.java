@@ -57,14 +57,9 @@ public class ItemsDataSource {
         return newItem;
     }
 
-    public void deleteItem(ClothingItem item) {
-        long id = item.getId();
-        Log.d(TAG, "delete item = " + id);
-        System.out.println("Item deleted with id: " + id);
-
+    public void deleteItem(long id) {
         database.delete(SQLiteHelper.TABLE_ITEMS, SQLiteHelper.COLUMN_ID
                 + " = " + id, null);
-
     }
 
     public void deleteAllItems() {
