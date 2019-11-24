@@ -36,14 +36,13 @@ public class MyWardrobe extends AppCompatActivity {
         wardrobeList.setAdapter(wardrobeAdapter);
         dh.open();
         String sql = "SELECT * FROM items WHERE isClean = 1";
-        clothingItems = dh.getItems(sql);
+        //clothingItems = dh.getItems(sql);
         wardrobeAdapter.notifyDataSetChanged();
     }
 
     public void onClick(View view) {
         Intent intent = new Intent(MyWardrobe.this, AddClothing.class);
-        startActivity(intent);
-
+        startActivityForResult(intent, 10);
     }
 
     public void clear_basket(View v){
@@ -84,5 +83,9 @@ public class MyWardrobe extends AppCompatActivity {
 
             return result;
         }
+    }
+    public void onDestroy(){
+        super.onDestroy();
+        dh.close();
     }
 }

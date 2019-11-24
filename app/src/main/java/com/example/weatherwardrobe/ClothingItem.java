@@ -1,5 +1,7 @@
 package com.example.weatherwardrobe;
 
+import android.os.Parcel;
+
 public class ClothingItem {
     private long id;
     private String item ;
@@ -22,6 +24,14 @@ public class ClothingItem {
         this.isClean = isClean;
         this.description = desc;
     }
+   /* public ClothingItem(Parcel parcel){
+        this.item = parcel.readString() ;
+        this.img = parcel.readByteArray();
+        this.colour = colour;
+        this.type = type;
+        this.isClean = isClean;
+        this.description = desc;
+    }*/
     public void setId(long id) {
         this.id = id;
     }
@@ -71,6 +81,16 @@ public class ClothingItem {
     } // DELETE THIS AFTER
     public String toString () {
         return item + "  " + id;
+    }
+
+    public void writeToParcel(Parcel dest, int flags){
+        dest.writeLong(this.id);
+        dest.writeString(this.item);
+        dest.writeByteArray(this.img);
+        dest.writeString(this.colour);
+        dest.writeString(this.type);
+        dest.writeInt(this.isClean);
+        dest.writeString(this.description);
     }
 }
 

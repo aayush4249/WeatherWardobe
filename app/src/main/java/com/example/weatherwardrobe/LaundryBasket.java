@@ -113,4 +113,9 @@ public class LaundryBasket extends AppCompatActivity {
             return result;
         }
     }
+
+    public void onDestroy(){
+        super.onDestroy();
+        dh.close();
+    }
 }

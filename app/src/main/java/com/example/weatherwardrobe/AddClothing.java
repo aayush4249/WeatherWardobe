@@ -2,8 +2,10 @@ package com.example.weatherwardrobe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -47,9 +49,12 @@ public class AddClothing extends AppCompatActivity {
 
         String x = "123123";
         byte[] b = x.getBytes();
-        dh.createItem(new ClothingItem("name", b, colour, type, 1, "desc"));
+        ClothingItem newItem = new ClothingItem("name", b, colour, type, 1, "desc");
+        dh.createItem(newItem);
 
-        Intent intent = new Intent(AddClothing.this, MyWardrobe.class);
-        startActivity(intent);
+        /*Intent resultIntent = new Intent();
+        resultIntent.putExtra("New Clothing Item", newItem);
+        setResult(Activity.RESULT_OK,resultIntent);*/
+        finish();
     }
 }
