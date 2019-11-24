@@ -49,12 +49,13 @@ public class AddClothing extends AppCompatActivity {
 
         String x = "123123";
         byte[] b = x.getBytes();
-        ClothingItem newItem = new ClothingItem("name", b, colour, type, 1, "desc");
+        ClothingItem newItem = new ClothingItem("name", b, colour, type, 0, "desc");
         dh.createItem(newItem);
-
-        /*Intent resultIntent = new Intent();
-        resultIntent.putExtra("New Clothing Item", newItem);
-        setResult(Activity.RESULT_OK,resultIntent);*/
         finish();
+    }
+
+    public void onDestroy(){
+        super.onDestroy();
+        dh.close();
     }
 }

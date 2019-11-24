@@ -24,6 +24,7 @@ public class MyWardrobe extends AppCompatActivity {
     public ListView wardrobeList;
     public WardrobeListAdapter wardrobeAdapter;
     private ItemsDataSource dh;
+    public String sql = "SELECT * FROM items WHERE isClean = 1";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,14 +36,14 @@ public class MyWardrobe extends AppCompatActivity {
         wardrobeAdapter = new WardrobeListAdapter(this);
         wardrobeList.setAdapter(wardrobeAdapter);
         dh.open();
-        String sql = "SELECT * FROM items WHERE isClean = 1";
-        //clothingItems = dh.getItems(sql);
+        clothingItems = dh.getItems(sql);
         wardrobeAdapter.notifyDataSetChanged();
+
     }
 
     public void onClick(View view) {
         Intent intent = new Intent(MyWardrobe.this, AddClothing.class);
-        startActivityForResult(intent, 10);
+        startActivity(intent);
     }
 
     public void clear_basket(View v){
@@ -68,9 +69,12 @@ public class MyWardrobe extends AppCompatActivity {
             //get clothing item and attributes
             ClothingItem item = getItem(position);
             String type = item.getType();
+            Bitmap bitmap = null;
             //convert byte array to bitmap
             byte[] byteArr = item.getImg();
-            Bitmap bitmap = BitmapFactory.decodeByteArray(byteArr, 0, byteArr.length);
+            if (byteArr != null) {
+                bitmap = BitmapFactory.decodeByteArray(byteArr, 0, byteArr.length);
+            }
             //inflate view
             LayoutInflater inflater = MyWardrobe.this.getLayoutInflater();
             View result = inflater.inflate(R.layout.clothing_item_layout, null);
@@ -78,11 +82,18 @@ public class MyWardrobe extends AppCompatActivity {
             ImageView image = (ImageView)result.findViewById(R.id.image);
             TextView type_text = (TextView)result.findViewById(R.id.type);
             //set views
-            image.setImageBitmap(bitmap);
+            if (bitmap != null) {
+                image.setImageBitmap(bitmap);
+            }
             type_text.setText(type);
 
             return result;
         }
+    }
+    public void onResume(){
+        super.onResume();
+        clothingItems = dh.getItems(sql);
+        wardrobeAdapter.notifyDataSetChanged();
     }
     public void onDestroy(){
         super.onDestroy();

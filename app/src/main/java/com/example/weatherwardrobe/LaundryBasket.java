@@ -97,17 +97,21 @@ public class LaundryBasket extends AppCompatActivity {
             //get clothing item and attributes
             ClothingItem item = getItem(position);
             String type = item.getType();
+            Bitmap bitmap = null;
             //convert byte array to bitmap
             byte[] byteArr = item.getImg();
-            Bitmap bitmap = BitmapFactory.decodeByteArray(byteArr, 0, byteArr.length);
-            //inflate view
+            if (byteArr != null) {
+                bitmap = BitmapFactory.decodeByteArray(byteArr, 0, byteArr.length);
+            }            //inflate view
             LayoutInflater inflater = LaundryBasket.this.getLayoutInflater();
             View result = inflater.inflate(R.layout.clothing_item_layout, null);
             //get views
             ImageView image = (ImageView)result.findViewById(R.id.image);
             TextView type_text = (TextView)result.findViewById(R.id.type);
             //set views
-            image.setImageBitmap(bitmap);
+            if (bitmap != null) {
+                image.setImageBitmap(bitmap);
+            }
             type_text.setText(type);
 
             return result;
