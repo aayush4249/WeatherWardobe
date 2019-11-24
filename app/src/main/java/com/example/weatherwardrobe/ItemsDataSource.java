@@ -39,6 +39,7 @@ public class ItemsDataSource {
     public ClothingItem createItem(ClothingItem item) {
         ContentValues values = new ContentValues();
         values.put(SQLiteHelper.COLUMN_ITEM, item.getItem());
+        values.put(SQLiteHelper.COLUMN_IMG, item.getImg());
         values.put(SQLiteHelper.COLUMN_COLOUR, item.getColour());
         values.put(COLUMN_TYPE, item.getType());
         values.put(SQLiteHelper.COLUMN_ISCLEAN, item.getIsClean());
