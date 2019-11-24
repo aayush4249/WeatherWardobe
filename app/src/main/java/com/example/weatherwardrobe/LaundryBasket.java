@@ -37,7 +37,6 @@ public class LaundryBasket extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_laundry_basket);
-        b = findViewById(R.id.clean);
         l = findViewById(R.id.laundry_list);
         ClothingItem temp;
         dh = new ItemsDataSource(this);
@@ -48,30 +47,6 @@ public class LaundryBasket extends AppCompatActivity {
         String sql = "SELECT * FROM items WHERE isClean = 0";
         clothingItems = dh.getItems(sql);
         laundryAdapter.notifyDataSetChanged();
-
-        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                positionInArray = position;
-                AlertDialog.Builder builder = new AlertDialog.Builder(LaundryBasket.this);
-                builder.setMessage(R.string.laundry_dialog_message);
-                builder.setTitle(R.string.laundry_dialog_title);
-                builder.setPositiveButton(R.string.laundry_dialog_pos, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        long itemId = clothingItems.get((int)positionInArray).getId();
-                        dh.clear_item(itemId);
-                        clothingItems.remove(positionInArray);
-                        laundryAdapter.notifyDataSetChanged();
-                    }
-                });
-                builder.setNegativeButton(R.string.laundry_dialog_neg, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                });
-                builder.show();
-            }
-        });
     }
 
     public void clear_basket(View v){
@@ -80,6 +55,22 @@ public class LaundryBasket extends AppCompatActivity {
             clothingItems.clear();
             laundryAdapter.notifyDataSetChanged();
         }
+    }
+
+    public void delete_item(View v){
+        long itemId = v.getId();
+        dh.clear_item(itemId);
+        clothingItems.remove(clothingItems.indexOf(searchById(itemId)));
+        laundryAdapter.notifyDataSetChanged();
+    }
+
+    public ClothingItem searchById(long id){
+        for (int i = 0; i < clothingItems.size(); i++){
+            if (clothingItems.get(i).getId() == id){
+                return clothingItems.get(i);
+            }
+        }
+        return null;
     }
 
     private class LaundryListAdapter extends ArrayAdapter<ClothingItem> {
@@ -108,6 +99,8 @@ public class LaundryBasket extends AppCompatActivity {
             //get views
             ImageView image = (ImageView)result.findViewById(R.id.image);
             TextView type_text = (TextView)result.findViewById(R.id.type);
+            Button delete_button = (Button)result.findViewById(R.id.delete);
+            delete_button.setId((int)item.getId());
             //set views
             if (bitmap != null) {
                 image.setImageBitmap(bitmap);

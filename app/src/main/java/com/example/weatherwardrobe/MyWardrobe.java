@@ -77,7 +77,7 @@ public class MyWardrobe extends AppCompatActivity {
             }
             //inflate view
             LayoutInflater inflater = MyWardrobe.this.getLayoutInflater();
-            View result = inflater.inflate(R.layout.clothing_item_layout, null);
+            View result = inflater.inflate(R.layout.wardrobe_item_layout, null);
             //get views
             ImageView image = (ImageView)result.findViewById(R.id.image);
             TextView type_text = (TextView)result.findViewById(R.id.type);
