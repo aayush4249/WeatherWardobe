@@ -3,6 +3,7 @@ package com.example.weatherwardrobe;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -40,8 +41,8 @@ public class MyWardrobe extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-
-
+        Intent intent = new Intent(MyWardrobe.this, AddClothing.class);
+        startActivity(intent);
 
     }
 
