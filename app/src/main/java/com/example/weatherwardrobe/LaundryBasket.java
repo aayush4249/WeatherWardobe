@@ -5,14 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Context;
+<<<<<<< Updated upstream
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+=======
+
+>>>>>>> Stashed changes
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +26,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class LaundryBasket extends AppCompatActivity {
@@ -31,7 +33,10 @@ public class LaundryBasket extends AppCompatActivity {
     public ArrayList<ClothingItem> clothingItems;
     public ListView l;
     public LaundryListAdapter laundryAdapter;
+<<<<<<< Updated upstream
     public long positionInArray;
+=======
+>>>>>>> Stashed changes
     private ItemsDataSource dh;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +47,7 @@ public class LaundryBasket extends AppCompatActivity {
         ClothingItem temp;
         dh = new ItemsDataSource(this);
         clothingItems = new ArrayList<ClothingItem>();
-        laundryAdapter = new LaundryBasket.LaundryListAdapter(this);
+        laundryAdapter = new LaundryListAdapter(this);
         l.setAdapter(laundryAdapter);
         dh.open();
         String sql = "SELECT * FROM items WHERE isClean = 0";
