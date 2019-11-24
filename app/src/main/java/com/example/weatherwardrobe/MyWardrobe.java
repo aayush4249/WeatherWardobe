@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -39,6 +40,21 @@ public class MyWardrobe extends AppCompatActivity {
         clothingItems = dh.getItems(sql);
         wardrobeAdapter.notifyDataSetChanged();
 
+        wardrobeList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id){
+                Bundle values = new Bundle();
+                values.putLong("ID", clothingItems.get(position).getId());
+                values.putByteArray("Image", clothingItems.get(position).getImg());
+                values.putString("Colour", clothingItems.get(position).getColour());
+                values.putString("Type", clothingItems.get(position).getType());
+                values.putInt("isClean", clothingItems.get(position).getIsClean());
+                values.putString("Description", clothingItems.get(position).getDescription());
+                //Intent intent = new Intent(MyWardrobe.this, );
+                //intent.putExtras(values);
+                //startActivity(intent);
+            }
+        });
     }
 
     public void onClick(View view) {
