@@ -94,6 +94,7 @@ public class LaundryBasket extends AppCompatActivity {
             byte[] byteArr = item.getImg();
             if (byteArr != null) {
                 bitmap = BitmapFactory.decodeByteArray(byteArr, 0, byteArr.length);
+
             }            //inflate view
             LayoutInflater inflater = LaundryBasket.this.getLayoutInflater();
             View result = inflater.inflate(R.layout.clothing_item_layout, null);
@@ -104,7 +105,7 @@ public class LaundryBasket extends AppCompatActivity {
             delete_button.setId((int)item.getId());
             //set views
             if (bitmap != null) {
-                image.setImageBitmap(bitmap);
+                image.setImageBitmap(Bitmap.createScaledBitmap(bitmap, 30, 30, false));
             }
             type_text.setText(type);
 
