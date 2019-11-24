@@ -11,7 +11,10 @@
 
     <!-- Get Outfit -->
     <string name="get_outfit_btn">Get Outfit</string>
-
+    <string name="get_outfit_title">Choose Outfit Type</string>
+    <string name="get_outfit_message">Get a random outfit or choose preferences?</string>
+    <string name="get_outfit_rand">Random</string>
+    <string name="get_outfit_choose">Choose</string>
 
     <!-- Account -->
     <string name="Location">Location: </string>
