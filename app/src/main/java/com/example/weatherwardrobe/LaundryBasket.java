@@ -1,8 +1,12 @@
 package com.example.weatherwardrobe;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -12,6 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -25,7 +30,8 @@ public class LaundryBasket extends AppCompatActivity {
     public Button b;
     public ArrayList<ClothingItem> clothingItems;
     public ListView l;
-    public LaundryBasket.LaundryListAdapter laundryAdapter;
+    public LaundryListAdapter laundryAdapter;
+    public long positionInArray;
     private ItemsDataSource dh;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +48,30 @@ public class LaundryBasket extends AppCompatActivity {
         String sql = "SELECT * FROM items WHERE isClean = 0";
         clothingItems = dh.getItems(sql);
         laundryAdapter.notifyDataSetChanged();
+
+        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                positionInArray = position;
+                AlertDialog.Builder builder = new AlertDialog.Builder(LaundryBasket.this);
+                builder.setMessage("Do you want to delete this item");
+                builder.setTitle("Delete Item");
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        long itemId = clothingItems.get((int)positionInArray).getId();
+                        dh.clear_item(itemId);
+                        clothingItems.remove(positionInArray);
+                        laundryAdapter.notifyDataSetChanged();
+                    }
+                });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                builder.show();
+            }
+        });
     }
 
     public void clear_basket(View v){

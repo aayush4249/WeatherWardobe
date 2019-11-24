@@ -22,4 +22,9 @@
     <!-- Location Dialog Box -->
     <string name="dialog_title">Set Location</string>
     <string name="hint">Enter Location</string>
+
+    <!-- Laundry -->
+
+    <!-- Main -->
+
 </resources>
