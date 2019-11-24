@@ -48,11 +48,10 @@ public class MyWardrobe extends AppCompatActivity {
                 values.putByteArray("Image", clothingItems.get(position).getImg());
                 values.putString("Colour", clothingItems.get(position).getColour());
                 values.putString("Type", clothingItems.get(position).getType());
-                values.putInt("isClean", clothingItems.get(position).getIsClean());
                 values.putString("Description", clothingItems.get(position).getDescription());
-                //Intent intent = new Intent(MyWardrobe.this, );
-                //intent.putExtras(values);
-                //startActivity(intent);
+                Intent intent = new Intent(MyWardrobe.this, WardrobeItemInfo.class);
+                intent.putExtras(values);
+                startActivity(intent);
             }
         });
     }
@@ -111,6 +110,7 @@ public class MyWardrobe extends AppCompatActivity {
         clothingItems = dh.getItems(sql);
         wardrobeAdapter.notifyDataSetChanged();
     }
+
     public void onDestroy(){
         super.onDestroy();
         dh.close();
