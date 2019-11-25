@@ -37,7 +37,7 @@ public class WardrobeItemInfo extends AppCompatActivity {
         type_text.setText("Type: " + type);
         desc_text.setText("Description: " + desc);
         if (bitmap != null) {
-            img_picture.setImageBitmap(Bitmap.createScaledBitmap(bitmap, 30, 30, false));
+            img_picture.setImageBitmap(Bitmap.createScaledBitmap(bitmap, 500, 500, false));
         }
     }
 
