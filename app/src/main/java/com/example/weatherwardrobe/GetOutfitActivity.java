@@ -1,33 +1,51 @@
 package com.example.weatherwardrobe;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ProgressBar;
-import android.widget.Spinner;
 
 public class GetOutfitActivity extends AppCompatActivity {
     String ACTIVITY_NAME = "GetOutfitActivity";
-
-    ProgressBar progressBar;
-    public boolean chooseRandom;
-    private Button randomBtn;
-    private Button chooseBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_outfit);
 
-        randomBtn = findViewById(R.id.random_btn);
-        chooseBtn = findViewById(R.id.choose_btn);
+        getOutfitFragment();
+    }
 
+    public void getOutfitFragment() {
+
+        FragmentGetOutfit frag = new FragmentGetOutfit();
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        Log.i(ACTIVITY_NAME, "random fragment");
+
+        transaction.replace(R.id.fragmentContainer, frag);
+
+//        transaction.add(R.id.fragmentContainer, frag);
+        //transaction.addToBackStack(null);
+        transaction.commit();
+    }
+//
+//    public void chooseFragment(View v){
+//        FragmentChoose frag = new FragmentChoose();
+//
+//        androidx.fragment.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//
+//        transaction.add(R.id.fragmentContainer, frag);
+//        transaction.addToBackStack(null);
+//        transaction.commit();
+//    }
+}
 
 
 
@@ -81,13 +99,9 @@ public class GetOutfitActivity extends AppCompatActivity {
 
 
 
-        // getOutfit and progressbar process
-            // re-roll outfit 33%
+// getOutfit and progressbar process
+// re-roll outfit 33%
 
-            // type options 33%
+// type options 33%
 
-            // colour options 33%
-
-
-    }
-}
+// colour options 33%

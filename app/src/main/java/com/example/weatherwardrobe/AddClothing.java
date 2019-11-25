@@ -50,6 +50,7 @@ public class AddClothing extends AppCompatActivity {
         //create an adapter to describe how items are displayed. There's multiple variations but this is the basic one.
         ArrayAdapter<String> typesAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, types);
         ArrayAdapter<String> colourAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, colours);
+
         //set the spinners adapter to the previously created one.
         typesDropdown.setAdapter(typesAdapter);
         colourDropdown.setAdapter(colourAdapter);

@@ -15,6 +15,8 @@
     <string name="get_outfit_message">Get a random outfit or choose preferences?</string>
     <string name="get_outfit_rand">Random</string>
     <string name="get_outfit_choose">Choose</string>
+    <string name="get_outfit_top">Top Preferences</string>
+    <string name="get_outfit_bottom">Bottom Preferences</string>
 
     <!-- Account -->
     <string name="Location">Location: </string>
