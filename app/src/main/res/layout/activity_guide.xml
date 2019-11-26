@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginTop="4dp"
-        android:text="User Guide"
-        android:textSize="50dp"
+        android:text="@string/activity_Guide_User_Guide"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,15 +22,8 @@
         android:layout_width="365dp"
         android:layout_height="628dp"
         android:layout_marginStart="8dp"
-        android:text="Weather Wardrobe is an application to help you decide what to wear based on the
-current weather. The main interface displays to you the current weather and provides buttons to navigate
-the application. The five buttons are Refresh Weather, Get Outfit, My Wardrobe, Laundry Basket, and Account.\n\n
-The Refresh Weather button refreshes the onscreen weather to the current weather. The Get Outfit button
-launches the interface that takes you step by step through the outfit selection process. The My Wardrobe button
-brings you to an interface where you can upload your clothes to select outfits from. The Laundry Basket button
-brings you to an interface where you can see which clothes you have already worn and can be cleared once those
-clothes are cleaned. The Account button lets you see and edit your account information"
-        android:textSize="18dp"
+        android:text="@string/activity_Guide_Description"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
