@@ -66,7 +66,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/location_value"
+        android:id="@+id/location_Value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
