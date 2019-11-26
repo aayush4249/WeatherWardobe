@@ -15,9 +15,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-public class FragmentChoose extends Fragment {
+public class FragmentChooseTop extends Fragment {
 
-    String ACTIVITY_NAME = "FragmentChoose";
+    String ACTIVITY_NAME = "FragmentChooseTop";
 
     private Spinner typesDropdown;
     private Spinner colourDropdown;
@@ -63,52 +63,27 @@ public class FragmentChoose extends Fragment {
                 topType = typesDropdown.getSelectedItem().toString();
                 topColour = colourDropdown.getSelectedItem().toString();
 
-                //create a list of items for the spinner.
-                types = new String[]{"pants", "shorts"};
+                Log.i(ACTIVITY_NAME, topColour + " " + topType);
+                Log.i(ACTIVITY_NAME, bottomColour + " " +  bottomType);
 
-                //create an adapter to describe how items are displayed. There's multiple variations but this is the basic one.
-                typesAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, types);
-                colourAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, colours);
+                Bundle clothingItems = new Bundle();
+                clothingItems.putString("topType", topType);
+                clothingItems.putString("topColour", topColour);
 
-                //set the spinners adapter to the previously created one.
-                typesDropdown.setAdapter(typesAdapter);
-                colourDropdown.setAdapter(colourAdapter);
+                FragmentChooseBottom frag = new FragmentChooseBottom();
 
-                nextBtn.setText("Get Outfit");
-                chooseTitleText.setText("Bottom Preferences");
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
 
-                nextBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        bottomType = typesDropdown.getSelectedItem().toString();
-                        bottomColour = colourDropdown.getSelectedItem().toString();
+                Log.i(ACTIVITY_NAME, "fragment get outfit");
 
-                        Log.i(ACTIVITY_NAME, topColour + " " + topType);
-                        Log.i(ACTIVITY_NAME, bottomColour + " " +  bottomType);
+                frag.setArguments(clothingItems);
+                transaction.replace(R.id.fragmentContainer, frag);
 
-                        Bundle clothingItems = new Bundle();
-                        clothingItems.putString("topType", topType);
-                        clothingItems.putString("topColour", topColour);
-                        clothingItems.putString("bottomType", bottomType);
-                        clothingItems.putString("bottomColour", bottomColour);
-
-                        FragmentResult frag = new FragmentResult();
-
-                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                        FragmentTransaction transaction = fragmentManager.beginTransaction();
-
-                        Log.i(ACTIVITY_NAME, "fragment get outfit");
-
-                        frag.setArguments(clothingItems);
-                        transaction.replace(R.id.fragmentContainer, frag);
-
-                        transaction.addToBackStack(null);
-                        transaction.commit();
-                    }
-                });
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
-
 
         return view;
     }

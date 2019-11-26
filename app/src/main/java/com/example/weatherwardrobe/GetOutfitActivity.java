@@ -37,7 +37,7 @@ public class GetOutfitActivity extends AppCompatActivity {
     }
 //
 //    public void chooseFragment(View v){
-//        FragmentChoose frag = new FragmentChoose();
+//        FragmentChooseTop frag = new FragmentChooseTop();
 //
 //        androidx.fragment.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 //

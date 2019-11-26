@@ -47,7 +47,7 @@ public class FragmentGetOutfit extends Fragment {
         chooseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentChoose frag = new FragmentChoose();
+                FragmentChooseTop frag = new FragmentChooseTop();
 
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
