@@ -2,6 +2,7 @@ package com.example.weatherwardrobe;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -35,6 +36,7 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class MainActivity extends AppCompatActivity {
 
+    SharedPreferences prefs;
     ImageView imageView;
     TextView current_temp;
     TextView min_temp;
@@ -184,6 +186,11 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
+
+            prefs = getSharedPreferences("my_prefs", MODE_PRIVATE);
+            SharedPreferences.Editor edit = prefs.edit();
+            edit.putString("currentTemp", currentTemp );
+            edit.commit();
 
             return "";
 
