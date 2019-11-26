@@ -38,7 +38,6 @@ public class FragmentResult extends Fragment {
         topResult.setText(topColour + " " + topType);
         bottomResult.setText(bottomColour + " " + bottomType);
 
-
         return view;
     }
 }
