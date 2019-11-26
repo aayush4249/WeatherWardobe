@@ -11,6 +11,7 @@
 
     <TextView
         android:id="@+id/type"
+        android:textSize="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -18,8 +19,7 @@
         android:id="@+id/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
         android:onClick="delete_item"
-        android:text="Clean"/>
+        android:text="Clean" />
 
 </LinearLayout>
