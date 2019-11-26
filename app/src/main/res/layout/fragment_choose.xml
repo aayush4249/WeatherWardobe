@@ -13,13 +13,14 @@
         android:visibility="invisible" />
 
     <TextView
+        android:id="@+id/choose_title_text"
         android:text="@string/get_outfit_top"
         android:textAlignment="center"
         android:textSize="18sp"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center" />w
 
     <Spinner
         android:id="@+id/choose_colour_spinner"
@@ -31,7 +32,6 @@
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown" />
 
-
     <Spinner
         android:id="@+id/choose_types_spinner"
         android:layout_width="280dp"
@@ -41,5 +41,11 @@
         android:layout_marginBottom="216dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown" />
+
+    <Button
+        android:id="@+id/choose_next_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Bottom"/>
 
 </LinearLayout>

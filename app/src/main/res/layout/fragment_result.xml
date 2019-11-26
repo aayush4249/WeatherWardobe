@@ -4,8 +4,14 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/result_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="random text" />
 
+    <TextView
+        android:id="@+id/result_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="random text" />
 </LinearLayout>
