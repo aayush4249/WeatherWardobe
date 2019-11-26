@@ -10,7 +10,8 @@
 
     <TextView
         android:id="@+id/type"
+        android:textSize="50dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
