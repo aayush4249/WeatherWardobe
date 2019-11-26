@@ -1,13 +1,18 @@
 <resources>
     <string name="app_name">WeatherWardrobe</string>
+    <string name="title_activity_my_wardrobe">MyWardrobe</string>
+    <string name="title_activity_get_outfit">getOutfit</string>
+
+    <!-- main -->
     <string name="my_wardrobe">My Wardrobe</string>
     <string name="refresh">Refresh Weather</string>
     <string name="laundry">Laundry Basket</string>
-    <string name="title_activity_my_wardrobe">MyWardrobe</string>
-    <string name="title_activity_get_outfit">getOutfit</string>
+
+    <!-- login -->
     <string name="login">Login</string>
     <string name="password">Password:</string>
     <string name="login_name">login name</string>
+    <string name="login_btn">Login</string>
 
     <!-- Get Outfit -->
     <string name="get_outfit_btn">Get Outfit</string>
@@ -29,10 +34,35 @@
     <string name="hint">Enter Location</string>
 
     <!-- Laundry -->
-    <string name="clear_button">clear_basket</string>
+    <string name="clear_button">clear basket</string>
     <string name="laundry_dialog_message">Do you want to delete this item</string>
     <string name="laundry_dialog_title">Delete Item</string>
     <string name="laundry_dialog_pos">Yes</string>
     <string name="laundry_dialog_neg">No</string>
 
+    <!-- Add Clothing -->
+    <string name="add_Clothing_Done_outfit">Done</string>
+    <string name="add_Clothing_Camera_button">Add Clothing Item</string>
+    <string name="add_Clothing_Add_Description">Add Description</string>
+
+    <!-- Activity Guide -->
+    <string name="activity_Guide_User_Guide">User Guide</string>
+    <string name="activity_Guide_Description">Weather Wardrobe is an application to help you decide what to wear based on the
+current weather. The main interface displays to you the current weather and provides buttons to navigate
+the application. The five buttons are Refresh Weather, Get Outfit, My Wardrobe, Laundry Basket, and Account.\n\n
+The Refresh Weather button refreshes the onscreen weather to the current weather. The Get Outfit button
+launches the interface that takes you step by step through the outfit selection process. The My Wardrobe button
+brings you to an interface where you can upload your clothes to select outfits from. The Laundry Basket button
+brings you to an interface where you can see which clothes you have already worn and can be cleared once those
+clothes are cleaned. The Account button lets you see and edit your account information</string>
+
+    <!-- My Wardrobe -->
+    <string name="my_Wardrobe_add_clothing">Add Clothing</string>
+
+    <!-- Wardrobe Item Info -->
+    <string name="wardrobe_Item_Info_Delete">Delete Item</string>
+    <string name="wardrobe_Item_Info_title">Item Info</string>
+
+    <!-- clothing item layout -->
+    <string name="clothing_item_clean">clean</string>
 </resources>

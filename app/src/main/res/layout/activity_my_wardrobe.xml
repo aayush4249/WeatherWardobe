@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"
-        android:text="Add Clothing" />
+        android:text="@string/my_Wardrobe_add_clothing" />
 
     <ListView
         android:id="@+id/wardrobe_list"

@@ -105,7 +105,7 @@ public class LaundryBasket extends AppCompatActivity {
             delete_button.setId((int)item.getId());
             //set views
             if (bitmap != null) {
-                image.setImageBitmap(Bitmap.createScaledBitmap(bitmap, 100, 100, false));
+                image.setImageBitmap(Bitmap.createScaledBitmap(bitmap, 200, 200, false));
             }
             type_text.setText(type);
 

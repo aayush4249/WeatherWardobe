@@ -98,7 +98,7 @@ public class MyWardrobe extends AppCompatActivity {
             TextView type_text = (TextView)result.findViewById(R.id.type);
             //set views
             if (bitmap != null) {
-                image.setImageBitmap(Bitmap.createScaledBitmap(bitmap, 100, 100, false));
+                image.setImageBitmap(Bitmap.createScaledBitmap(bitmap, 200, 200, false));
             }
             type_text.setText(type);
 
