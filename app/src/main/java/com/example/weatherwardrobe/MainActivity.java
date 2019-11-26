@@ -125,7 +125,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... strings) {
             try {
-                URL url = new URL("https://api.openweathermap.org/data/2.5/weather?q=ottawa,ca&APPID=0f39ce3557fa38dd0ffc197ecb534735&mode=xml&units=metric");
+                SharedPreferences preferences = getSharedPreferences("my_prefs", MODE_PRIVATE);
+                String city = preferences.getString("location","");
+                city = city.toLowerCase();
+                URL url = new URL("https://api.openweathermap.org/data/2.5/weather?q="+city+",ca&APPID=0f39ce3557fa38dd0ffc197ecb534735&mode=xml&units=metric");
 
                 HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
                 conn.setReadTimeout(10000);

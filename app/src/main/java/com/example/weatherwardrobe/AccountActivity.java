@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Criteria;
@@ -61,13 +62,16 @@ public class AccountActivity extends AppCompatActivity implements LocationListen
         final Button setLocation = findViewById(R.id.btn_set_location);
         final Button detectLocation = findViewById(R.id.btn_detect_location);
 
-
+        SharedPreferences preferences = getSharedPreferences("my_prefs", MODE_PRIVATE);
+        String city = preferences.getString("location","");
+        location_value.setText(city);
         //New user dialog input box to manually set the location
         setLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 inputDialog();
+
             }
         });
 
@@ -87,7 +91,7 @@ public class AccountActivity extends AppCompatActivity implements LocationListen
                     request_location_permission();
                     return;
                 }
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 30000, 0, (LocationListener) AccountActivity.this);
+                //locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 30000, 0, (LocationListener) AccountActivity.this);
 
                 //Criteria criteria = new Criteria();
                 //String bestProvider = locationManager.getBestProvider(criteria, true);
@@ -99,10 +103,12 @@ public class AccountActivity extends AppCompatActivity implements LocationListen
 
                 if (location != null) {
                     onLocationChanged(location);
+
                 }
 
             }
         });
+
     }
 
     public void onLocationChanged(Location location) {
@@ -121,6 +127,7 @@ public class AccountActivity extends AppCompatActivity implements LocationListen
                 String city = addresses.get(0).getLocality();
                 Log.i("City", " " + city);
                 location_value.setText(city);
+
             }
         } catch (IOException e) {
             // TODO Auto-generated catch block
@@ -215,6 +222,26 @@ public class AccountActivity extends AppCompatActivity implements LocationListen
                 permissionGranted = true;
             }
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences preferences = getSharedPreferences("my_prefs", MODE_PRIVATE);
+        String city = preferences.getString("location","");
+        location_value.setText(city);
+
+    }
+
+    @Override
+    protected  void onPause(){
+        super.onPause();
+        SharedPreferences prefs = getSharedPreferences("my_prefs", MODE_PRIVATE);
+        SharedPreferences.Editor edit = prefs.edit();
+        String loc = (String) location_value.getText();
+        edit.putString("location",loc );
+        edit.commit();
+
     }
 
 }
