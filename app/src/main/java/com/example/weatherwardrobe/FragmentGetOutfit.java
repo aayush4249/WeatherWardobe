@@ -47,6 +47,13 @@ public class FragmentGetOutfit extends Fragment {
         chooseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+//                Bundle clothingItems = new Bundle();
+//                clothingItems.putString("topType", null);
+//                clothingItems.putString("topColour", null);
+//                clothingItems.putString("bottomType", null);
+//                clothingItems.putString("bottomColour", null);
+
                 FragmentChooseTop frag = new FragmentChooseTop();
 
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
