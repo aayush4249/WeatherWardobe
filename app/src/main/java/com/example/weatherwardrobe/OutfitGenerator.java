@@ -2,6 +2,7 @@ package com.example.weatherwardrobe;
 
 import android.content.Context;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class OutfitGenerator {
 
@@ -58,9 +59,14 @@ public class OutfitGenerator {
         ArrayList<ClothingItem> topItems = dh.getItems(topSQL);
         ArrayList<ClothingItem> bottomItems = dh.getItems(bottomSQL);
 
-        out.outerwear = outerwearItems.get(0);
-        out.top = topItems.get(0);
-        out.bottom = bottomItems.get(0);
+        Random rand = new Random();
+        int outRand = rand.nextInt(outerwearItems.size());
+        int topRand = rand.nextInt(topItems.size());
+        int botRand = rand.nextInt(bottomItems.size());
+
+        out.outerwear = outerwearItems.get(outRand);
+        out.top = topItems.get(topRand);
+        out.bottom = bottomItems.get(botRand);
 
         dh.close();
         return out;
