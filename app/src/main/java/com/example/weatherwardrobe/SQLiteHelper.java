@@ -12,12 +12,12 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_ITEM = "item";
     public static final String COLUMN_IMG = "img";
     public static final String COLUMN_COLOUR = "colour";
-    public static final String COLUMN_TYPE = "type";
+    public static final String COLUMN_TYPEOF = "typeof";
     public static final String COLUMN_ISCLEAN = "isClean";
     public static final String COLUMN_DESC = "description";
 
     private static final String DATABASE_NAME = "items.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
 
     // Database creation sql statement
@@ -26,7 +26,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             + " integer primary key autoincrement, " + COLUMN_ITEM
             + " text not null, " + COLUMN_IMG + " blob, "
             +  COLUMN_COLOUR + " text not null, "
-            + COLUMN_TYPE + " text not null, "
+            + COLUMN_TYPEOF + " text not null, "
             + COLUMN_ISCLEAN + " integer, "
             + COLUMN_DESC + " text not null);";
 

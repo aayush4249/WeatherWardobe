@@ -11,7 +11,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import static com.example.weatherwardrobe.SQLiteHelper.COLUMN_DESC;
-import static com.example.weatherwardrobe.SQLiteHelper.COLUMN_TYPE;
 
 public class ItemsDataSource {
     // Database fields
@@ -19,7 +18,7 @@ public class ItemsDataSource {
     private SQLiteHelper dbHelper;
     private String[] allItems = { SQLiteHelper.COLUMN_ID,
             SQLiteHelper.COLUMN_ITEM, SQLiteHelper.COLUMN_IMG, SQLiteHelper.COLUMN_COLOUR,
-            COLUMN_TYPE, SQLiteHelper.COLUMN_ISCLEAN, COLUMN_DESC   };
+            SQLiteHelper.COLUMN_TYPEOF, SQLiteHelper.COLUMN_ISCLEAN, COLUMN_DESC   };
 
     private static final String TAG = "myItemDB";
 
@@ -41,7 +40,7 @@ public class ItemsDataSource {
         values.put(SQLiteHelper.COLUMN_ITEM, item.getItem());
         values.put(SQLiteHelper.COLUMN_IMG, item.getImg());
         values.put(SQLiteHelper.COLUMN_COLOUR, item.getColour());
-        values.put(COLUMN_TYPE, item.getType());
+        values.put(SQLiteHelper.COLUMN_TYPEOF, item.getType());
         values.put(SQLiteHelper.COLUMN_ISCLEAN, item.getIsClean());
         values.put(COLUMN_DESC, item.getDescription());
         long insertId = database.insert(SQLiteHelper.TABLE_ITEMS, null,

@@ -50,9 +50,9 @@ public class OutfitGenerator {
         ItemsDataSource dh = new ItemsDataSource(context);
         dh.open();
 
-        String outerwearSQL = "SELECT * FROM items WHERE isClean = 1 AND type = " + outerwearType;
-        String topSQL = "SELECT * FROM items WHERE isClean = 1 AND type = " + topType;
-        String bottomSQL = "SELECT * FROM items WHERE isClean = 1 AND type = " + bottomType;
+        String outerwearSQL = "SELECT * FROM items WHERE isClean = 1 AND typeof = '" + outerwearType + "'";
+        String topSQL = "SELECT * FROM items WHERE isClean = 1 AND typeof = '" + topType + "'";
+        String bottomSQL = "SELECT * FROM items WHERE isClean = 1 AND typeof = '" + bottomType + "'";
 
         ArrayList<ClothingItem> outerwearItems = dh.getItems(outerwearSQL);
         ArrayList<ClothingItem> topItems = dh.getItems(topSQL);

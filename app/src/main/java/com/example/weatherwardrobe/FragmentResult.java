@@ -59,9 +59,9 @@ public class FragmentResult extends Fragment {
             ClothingItem bottom = generator.selectedOutfit.bottom;
 
             // set on result page
-            Log.i(ACTIVITY_NAME, "" + outerwear);
-            topResult.setText("" + top);
-            bottomResult.setText("" + bottom);
+            Log.i(ACTIVITY_NAME, "" + outerwear.getColour() + " " + outerwear.getType());
+            topResult.setText("" + top.getColour() + " " + top.getType());
+            bottomResult.setText("" + bottom.getColour() + " " + bottom.getType());
 
         }
 
