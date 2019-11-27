@@ -43,8 +43,8 @@ public class FragmentChooseBottom extends Fragment {
         colourDropdown = view.findViewById(R.id.choose_colour_spinner);
 
         //create a list of items for the spinner.
-        colours = new String[]{"white", "black", "grey", "red", "orange", "yellow", "green", "blue", "purple"};
-        types = new String[]{"pants", "shorts"};
+        colours = new String[]{getResources().getString(R.string.white), getResources().getString(R.string.black), getResources().getString(R.string.grey), getResources().getString(R.string.red), getResources().getString(R.string.orange), getResources().getString(R.string.yellow), getResources().getString(R.string.green), getResources().getString(R.string.blue), getResources().getString(R.string.purple)};
+        types = new String[]{getResources().getString(R.string.pants), getResources().getString(R.string.shorts)};
 
         //create an adapter to describe how items are displayed. There's multiple variations but this is the basic one.
         typesAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, types);

@@ -7,6 +7,9 @@
     <string name="my_wardrobe">My Wardrobe</string>
     <string name="refresh">Refresh Weather</string>
     <string name="laundry">Laundry Basket</string>
+    <string name="temp">Current Temp:</string>
+    <string name="min">Minimum Temp:</string>
+    <string name="max">Maximum Temp:</string>
 
     <!-- login -->
     <string name="login">Login</string>
@@ -44,6 +47,7 @@
     <string name="add_Clothing_Done_outfit">Done</string>
     <string name="add_Clothing_Camera_button">Add Clothing Item</string>
     <string name="add_Clothing_Add_Description">Add Description</string>
+    <string name="if_no_image">Please take a photo of your clothing item.</string>
 
     <!-- Activity Guide -->
     <string name="activity_Guide_User_Guide">User Guide</string>
@@ -65,4 +69,23 @@ clothes are cleaned. The Account button lets you see and edit your account infor
 
     <!-- clothing item layout -->
     <string name="clothing_item_clean">clean</string>
+
+    <!-- colour list -->
+    <string name="yellow">yellow</string>
+    <string name="white">white</string>
+    <string name="black">black</string>
+    <string name="purple">purple</string>
+    <string name="grey">grey</string>
+    <string name="red">red</string>
+    <string name="orange">orange</string>
+    <string name="green">green</string>
+    <string name="blue">blue</string>
+
+    <!-- types -->
+    <string name="coat">coat</string>
+    <string name="tshirt">t-shirt</string>
+    <string name="longsleeve">longsleeve</string>
+    <string name="sweater">sweater</string>
+    <string name="pants">pants</string>
+    <string name="shorts">shorts</string>
 </resources>
