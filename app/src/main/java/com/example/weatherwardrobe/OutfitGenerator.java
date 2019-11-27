@@ -1,6 +1,7 @@
 package com.example.weatherwardrobe;
 
-import android.content.SharedPreferences;
+import android.content.Context;
+import java.util.ArrayList;
 
 public class OutfitGenerator {
 
@@ -8,16 +9,19 @@ public class OutfitGenerator {
     private String topColour;
     private String bottomType;
     private String bottomColour;
-//    private int currentTemp = getCurrentTemp();
+    private Context context;
     public Outfit selectedOutfit;
 
 
     // use empty constructor when selecting random outfit
-    public OutfitGenerator(){
-        this.selectedOutfit = getRandomOutfit();
+    // context is needed for database
+    public OutfitGenerator(Context context, int currentTemp){
+        this.context = context;
+        this.selectedOutfit = getRandomOutfit(context, currentTemp);
     }
 
-    public OutfitGenerator(String topType, String topColour, String bottomType, String bottomColour){
+    public OutfitGenerator(Context context, String topType, String topColour, String bottomType, String bottomColour){
+        this.context = context;
         this.topType = topType;
         this.topColour = topColour;
         this.bottomType = bottomType;
@@ -28,17 +32,39 @@ public class OutfitGenerator {
         return this.selectedOutfit;
     }
 
-    private Outfit getRandomOutfit(){
+    private Outfit getRandomOutfit(Context context, int currentTemp){
         Outfit out = new Outfit();
+        String outerwearType = "";
+        String topType = "tshirt";
+        String bottomType = "pants";
+
+        if(currentTemp > 18){
+            bottomType = "shorts";
+        }
+
+        if(currentTemp < 5){
+            outerwearType = "coat";
+            topType = "longsleeve";
+        }
+
+        ItemsDataSource dh = new ItemsDataSource(context);
+        dh.open();
+
+        String outerwearSQL = "SELECT * FROM items WHERE isClean = 1 AND type = " + outerwearType;
+        String topSQL = "SELECT * FROM items WHERE isClean = 1 AND type = " + topType;
+        String bottomSQL = "SELECT * FROM items WHERE isClean = 1 AND type = " + bottomType;
+
+        ArrayList<ClothingItem> outerwearItems = dh.getItems(outerwearSQL);
+        ArrayList<ClothingItem> topItems = dh.getItems(topSQL);
+        ArrayList<ClothingItem> bottomItems = dh.getItems(bottomSQL);
+
+        out.outerwear = outerwearItems.get(0);
+        out.top = topItems.get(0);
+        out.bottom = bottomItems.get(0);
+
+        dh.close();
         return out;
     }
-
-//    private int getCurrentTemp(){
-//        SharedPreferences bb = getSharedPreferences("my_prefs", 0);
-//        String temp = bb.getString("currentTemp", "");
-//        int currentTemp = Integer.parseInt(temp);
-//        return currentTemp;
-//    }
 
     public class Outfit{
 
