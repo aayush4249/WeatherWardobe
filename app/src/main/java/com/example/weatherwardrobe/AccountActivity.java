@@ -98,7 +98,7 @@ public class AccountActivity extends AppCompatActivity implements LocationListen
                 Location location = getLocation();
 
                 if (location == null) {
-                    Toast.makeText(getApplicationContext(), "GPS signal not found", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.gps_signal_not_found), Toast.LENGTH_SHORT).show();
                 }
 
                 if (location != null) {

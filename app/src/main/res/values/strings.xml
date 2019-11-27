@@ -10,6 +10,7 @@
     <string name="temp">Current Temp:</string>
     <string name="min">Minimum Temp:</string>
     <string name="max">Maximum Temp:</string>
+    <string name="weather_update">Weather has been updated</string>
 
     <!-- login -->
     <string name="login">Login</string>
@@ -25,12 +26,14 @@
     <string name="get_outfit_choose">Choose</string>
     <string name="get_outfit_top">Top Preferences</string>
     <string name="get_outfit_bottom">Bottom Preferences</string>
+    <string name="get_outfit">Get Outfit</string>
 
     <!-- Account -->
     <string name="Location">Location: </string>
     <string name="name">Name: </string>
     <string name="detect_location">Detect Location</string>
     <string name="set_location">Set Location</string>
+    <string name="gps_signal_not_found">GPS signal not found</string>
 
     <!-- Location Dialog Box -->
     <string name="dialog_title">Set Location</string>

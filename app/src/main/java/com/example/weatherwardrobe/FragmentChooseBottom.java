@@ -54,8 +54,8 @@ public class FragmentChooseBottom extends Fragment {
         typesDropdown.setAdapter(typesAdapter);
         colourDropdown.setAdapter(colourAdapter);
 
-        nextBtn.setText("Get Outfit");
-        chooseTitleText.setText("Bottom Preferences");
+        nextBtn.setText(getResources().getString(R.string.get_outfit));
+        chooseTitleText.setText(getResources().getString(R.string.get_outfit_bottom));
 
 
         nextBtn.setOnClickListener(new View.OnClickListener() {

@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     public void refresh(View v){
         ForecastQuery f = new ForecastQuery();
         f.execute();
-        Snackbar.make(v, "Weather has been updated", Snackbar.LENGTH_LONG)
+        Snackbar.make(v, getResources().getString(R.string.weather_update), Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
     }
 
