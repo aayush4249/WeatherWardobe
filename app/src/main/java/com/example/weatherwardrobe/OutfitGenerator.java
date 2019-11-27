@@ -15,7 +15,7 @@ public class OutfitGenerator {
 
     // use empty constructor when selecting random outfit
     // context is needed for database
-    public OutfitGenerator(Context context, int currentTemp){
+    public OutfitGenerator(Context context, float currentTemp){
         this.context = context;
         this.selectedOutfit = getRandomOutfit(context, currentTemp);
     }
@@ -32,9 +32,9 @@ public class OutfitGenerator {
         return this.selectedOutfit;
     }
 
-    private Outfit getRandomOutfit(Context context, int currentTemp){
+    private Outfit getRandomOutfit(Context context, float currentTemp){
         Outfit out = new Outfit();
-        String outerwearType = "";
+        String outerwearType = "coat";
         String topType = "tshirt";
         String bottomType = "pants";
 

@@ -34,7 +34,7 @@ public class FragmentResult extends Fragment {
 
         // get current temperature
         SharedPreferences preferences = getActivity().getSharedPreferences("my_prefs", MODE_PRIVATE);
-        int currentTemp = Integer.parseInt(preferences.getString("currentTemp",""));
+        float currentTemp = Float.parseFloat(preferences.getString("currentTemp",""));
 
         Log.i(ACTIVITY_NAME, "temp: " + currentTemp);
 
