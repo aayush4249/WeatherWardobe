@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="authors">Autorski: Brian Tiner, Adam Gumieniak, Aayush Sheth, Dylan Clarry, Bryan Mietkiewicz \nVersion: 1.0</string>
+    <string name="app_name">Szafa Pogodowa</string>
+    <string name="title_activity_my_wardrobe">Moja Szafa</string>
+    <string name="title_activity_get_outfit">Zdobądź Strój</string>
+
+    <!-- main -->
+    <string name="my_wardrobe">Moja Szafa</string>
+    <string name="refresh">Odśwież Pogodę</string>
+    <string name="laundry">Kosz Na Pranie</string>
+    <string name="temp">Aktualna Temperatura:</string>
+    <string name="min">Minimum Temp:</string>
+    <string name="max">Maksymalny Temp:</string>
+    <string name="weather_update">Pogoda została zaktualizowana</string>
+
+    <!-- login -->
+    <string name="login">Zaloguj Się</string>
+    <string name="password">Hasło:</string>
+    <string name="login_name">Nazwa Użytkownika</string>
+    <string name="login_btn">Zaloguj Się</string>
+
+    <!-- Get Outfit -->
+    <string name="get_outfit_btn">Zdobądź Strój</string>
+    <string name="get_outfit_title">Wybierz typ stroju</string>
+    <string name="get_outfit_message">Zdobądź losowy strój lub wybierz preferencje?</string>
+    <string name="get_outfit_rand">Losowy</string>
+    <string name="get_outfit_choose">Wybierać</string>
+    <string name="get_outfit_top">Najważniejsze Preferencje</string>
+    <string name="get_outfit_bottom">Dolne Preferencje</string>
+    <string name="get_outfit">Zdobądź Strój</string>
+    <string name="get_outfit_choose_bottom">wybierz dół</string>
+
+    <!-- Account -->
+    <string name="Location">Lokalizacja: </string>
+    <string name="name">Imię: </string>
+    <string name="detect_location">Wykryj Lokalizację</string>
+    <string name="set_location">Ustaw Położenie</string>
+    <string name="gps_signal_not_found">Nie znaleziono sygnału GPS</string>
+
+    <!-- Location Dialog Box -->
+    <string name="dialog_title">Ustaw położenie</string>
+    <string name="hint">Wpisz lokalizację</string>
+
+    <!-- Laundry -->
+    <string name="clear_button">przezroczysty kosz</string>
+    <string name="laundry_dialog_message">Czy chcesz usunąć ten element?</string>
+    <string name="laundry_dialog_title">Usuń przedmiot</string>
+    <string name="laundry_dialog_pos">Tak</string>
+    <string name="laundry_dialog_neg">Nie</string>
+
+    <!-- Add Clothing -->
+    <string name="add_Clothing_Done_outfit">Gotowy</string>
+    <string name="add_Clothing_Camera_button">Dodaj element ubioru</string>
+    <string name="add_Clothing_Add_Description">Dodaj opis</string>
+    <string name="if_no_image">Zrób zdjęcie swojego ubrania.</string>
+    <string name="cancelled">Anulowany</string>
+
+    <!-- Activity Guide -->
+    <string name="activity_Guide_User_Guide">Podręcznik użytkownika</string>
+    <string name="activity_Guide_Description">Weather Wardrobe to aplikacja, która pomoże Ci zdecydować, w co się ubrać na podstawie
+obecna pogoda. Główny interfejs wyświetla aktualną pogodę i zapewnia przyciski do nawigacji
+Aplikacja. Pięć przycisków to Odśwież pogodę, Pobierz strój, Moja szafa, Kosz na pranie i Konto. \ N \ n
+Przycisk Odśwież pogodę odświeża pogodę na ekranie do bieżącej pogody. Przycisk Get Outfit
+uruchamia interfejs, który prowadzi użytkownika krok po kroku przez proces wyboru zestawu. Przycisk Moja szafa
+przeniesie Cię do interfejsu, w którym możesz przesłać swoje ubrania, aby wybrać stroje. Przycisk Kosz na bieliznę
+przeniesie Cię do interfejsu, w którym możesz zobaczyć, które ubrania już nosiłeś, i które możesz usunąć po ich założeniu
+ubrania są sprzątane. Przycisk Konto pozwala wyświetlać i edytować informacje o koncie</string>
+
+    <!-- My Wardrobe -->
+    <string name="my_Wardrobe_add_clothing">Dodaj odzież</string>
+
+    <!-- Wardrobe Item Info -->
+    <string name="wardrobe_Item_Info_Delete">Usuń przedmiot</string>
+    <string name="wardrobe_Item_Info_title">Informacje o produkcie</string>
+
+    <!-- clothing item layout -->
+    <string name="clothing_item_clean">czysty</string>
+
+    <!-- colour list -->
+    <string name="yellow">żółty</string>
+    <string name="white">biały</string>
+    <string name="black">czarny</string>
+    <string name="purple">fioletowy</string>
+    <string name="grey">szary</string>
+    <string name="red">czerwony</string>
+    <string name="orange">pomarańczowy</string>
+    <string name="green">zielony</string>
+    <string name="blue">niebieski</string>
+
+    <!-- types -->
+    <string name="coat">płaszcz</string>
+    <string name="tshirt">podkoszulek</string>
+    <string name="longsleeve">długi rękaw</string>
+    <string name="sweater">sweter</string>
+    <string name="pants">spodnie</string>
+    <string name="shorts">szorty</string>
+
+    <!-- toolbar -->
+    <string name="about">O Tym</string>
+    <string name="guide">Podręcznik Użytkownika</string>
+    <string name="Account">Konto</string>
+</resources>

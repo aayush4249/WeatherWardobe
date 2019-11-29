@@ -1,4 +1,5 @@
 <resources>
+    <string name="authors">Authors: Brian Tiner, Adam Gumieniak, Aayush Sheth, Dylan Clarry, Bryan Mietkiewicz \n</string>
     <string name="app_name">WeatherWardrobe</string>
     <string name="title_activity_my_wardrobe">MyWardrobe</string>
     <string name="title_activity_get_outfit">getOutfit</string>
@@ -27,6 +28,7 @@
     <string name="get_outfit_top">Top Preferences</string>
     <string name="get_outfit_bottom">Bottom Preferences</string>
     <string name="get_outfit">Get Outfit</string>
+    <string name="get_outfit_choose_bottom">Choose Bottom</string>
 
     <!-- Account -->
     <string name="Location">Location: </string>
@@ -51,6 +53,7 @@
     <string name="add_Clothing_Camera_button">Add Clothing Item</string>
     <string name="add_Clothing_Add_Description">Add Description</string>
     <string name="if_no_image">Please take a photo of your clothing item.</string>
+    <string name="cancelled">Cancelled</string>
 
     <!-- Activity Guide -->
     <string name="activity_Guide_User_Guide">User Guide</string>
@@ -91,4 +94,9 @@ clothes are cleaned. The Account button lets you see and edit your account infor
     <string name="sweater">sweater</string>
     <string name="pants">pants</string>
     <string name="shorts">shorts</string>
+
+    <!-- toolbar -->
+    <string name="about">About</string>
+    <string name="guide">User Guide</string>
+    <string name="Account">Account</string>
 </resources>

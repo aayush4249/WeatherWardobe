@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem mi){
         int id = mi.getItemId();
         if (id == R.id.about){
-            Toast toast = Toast.makeText(getApplicationContext(), "Authors: Brian Tiner, Adam Gumieniak, Aayush Sheth, Dylan Clarry, Bryan Mietkiewicz\nVersion: 1.0", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(getApplicationContext(), getResources().getString(R.string.authors), Toast.LENGTH_LONG);
             toast.show();
         }
         else if(id == R.id.guide){

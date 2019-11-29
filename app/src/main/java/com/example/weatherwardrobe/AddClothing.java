@@ -97,7 +97,7 @@ public class AddClothing extends AppCompatActivity {
                 image = stream.toByteArray();
                 Log.d(TAG, "Finished adding image to item.");
             } else if (resultCode == RESULT_CANCELED) {
-                Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getResources().getString(R.string.cancelled), Toast.LENGTH_LONG).show();
             }
         }
     }
