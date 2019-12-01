@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <string name="authors">Autorski: Brian Tiner, Adam Gumieniak, Aayush Sheth, Dylan Clarry, Bryan Mietkiewicz \nVersion: 1.0</string>
+    <string name="authors">Autorski:\nBrian Tiner,\,Adam Gumieniak,\nAayush Sheth,\nDylan Clarry,\nBryan Mietkiewicz\nVersion: 1.0</string>
     <string name="app_name">Szafa Pogodowa</string>
     <string name="title_activity_my_wardrobe">Moja Szafa</string>
     <string name="title_activity_get_outfit">Zdobądź Strój</string>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="authors">Authors: Brian Tiner, Adam Gumieniak, Aayush Sheth, Dylan Clarry, Bryan Mietkiewicz \n</string>
+    <string name="authors">Authors:\nBrian Tiner,\nAdam Gumieniak,\nAayush Sheth,\nDylan Clarry,\nBryan Mietkiewicz\nVersion 1.0</string>
     <string name="app_name">WeatherWardrobe</string>
     <string name="title_activity_my_wardrobe">MyWardrobe</string>
     <string name="title_activity_get_outfit">getOutfit</string>

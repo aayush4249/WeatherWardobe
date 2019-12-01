@@ -58,8 +58,6 @@ public class FragmentResult extends Fragment{
     {
         view = inflater.inflate(R.layout.fragment_result, container, false);
 
-
-
         confirmButton = view.findViewById(R.id.confirm);
         confirmButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -286,7 +284,6 @@ public class FragmentResult extends Fragment{
             bottomTypeText.setText(bottom.getType());
             bottomColourText.setText(bottom.getColour());
             bottomDescText.setText(bottom.getDescription());
-
         }
 
         return view;
