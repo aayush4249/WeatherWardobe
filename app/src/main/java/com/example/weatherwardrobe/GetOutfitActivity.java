@@ -35,6 +35,14 @@ public class GetOutfitActivity extends AppCompatActivity {
         //transaction.addToBackStack(null);
         transaction.commit();
     }
+
+    public void refresh(View v){
+
+    }
+
+    public void confirm(View v){
+
+    }
 //
 //    public void chooseFragment(View v){
 //        FragmentChooseTop frag = new FragmentChooseTop();

@@ -23,20 +23,42 @@ public class OutfitGenerator {
 
     public OutfitGenerator(Context context, String topType, String topColour, String bottomType, String bottomColour){
         this.context = context;
-        this.topType = topType;
-        this.topColour = topColour;
-        this.bottomType = bottomType;
-        this.bottomColour = bottomColour;
+        this.selectedOutfit = getSelectedOutfit(context, topType, topColour, bottomType, bottomColour);
     }
 
     public Outfit getOutfit(){
         return this.selectedOutfit;
     }
 
+    public Outfit getSelectedOutfit(Context context, String topType, String topColour, String bottomType, String bottomColour){
+        Outfit out = new Outfit();
+        ItemsDataSource dh = new ItemsDataSource(context);
+        dh.open();
+
+        String topSQL = "SELECT * FROM items WHERE isClean = 1 AND typeof = '" + topType + "' AND colour = '" + topColour + "'";
+        String bottomSQL = "SELECT * FROM items WHERE isClean = 1 AND typeof = '" + bottomType + "' AND colour = '" + bottomColour + "'";
+
+        ArrayList<ClothingItem> topItems = dh.getItems(topSQL);
+        ArrayList<ClothingItem> bottomItems = dh.getItems(bottomSQL);
+
+        Random rand = new Random();
+        if (topItems.size() > 0) {
+            int topRand = rand.nextInt(topItems.size());
+            out.top = topItems.get(topRand);
+        }
+        if (bottomItems.size() > 0) {
+            int botRand = rand.nextInt(bottomItems.size());
+            out.bottom = bottomItems.get(botRand);
+        }
+
+        dh.close();
+        return out;
+    }
+
     private Outfit getRandomOutfit(Context context, float currentTemp){
         Outfit out = new Outfit();
-        String outerwearType = "coat";
-        String topType = "tshirt";
+        String outerwearType = null;
+        String topType = "t-shirt";
         String bottomType = "pants";
 
         if(currentTemp > 18){
@@ -60,13 +82,20 @@ public class OutfitGenerator {
         ArrayList<ClothingItem> bottomItems = dh.getItems(bottomSQL);
 
         Random rand = new Random();
-        int outRand = rand.nextInt(outerwearItems.size());
-        int topRand = rand.nextInt(topItems.size());
-        int botRand = rand.nextInt(bottomItems.size());
+        if (!outerwearItems.isEmpty()) {
+            int outRand = rand.nextInt(outerwearItems.size());
+            out.outerwear = outerwearItems.get(outRand);
+        }
+        else{
+            out.outerwear = null;
+        }
 
-        out.outerwear = outerwearItems.get(outRand);
+        int topRand = rand.nextInt(topItems.size());
         out.top = topItems.get(topRand);
+
+        int botRand = rand.nextInt(bottomItems.size());
         out.bottom = bottomItems.get(botRand);
+
 
         dh.close();
         return out;
@@ -89,6 +118,7 @@ public class OutfitGenerator {
         public Outfit(ClothingItem top, ClothingItem bottom){
             this.top = top;
             this.bottom = bottom;
+            this.outerwear = null;
         }
     }
 

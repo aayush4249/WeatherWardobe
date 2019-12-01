@@ -4,14 +4,84 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/result_top"
+        android:id="@+id/outerwearTitle"
+        android:text="Outer Wear:"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="random text" />
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/outerwearType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/outerwearColour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/outerwearDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/result_outerwear"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
 
     <TextView
-        android:id="@+id/result_bottom"
+        android:text="Top:"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="random text" />
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/topType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/topColour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/topDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/result_top"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+    <TextView
+        android:text="Bottom:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/bottomType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/bottomColour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/bottomDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/result_bottom"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+    <Button
+        android:onClick="confirm"
+        android:text="Confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:onClick="refresh"
+        android:text="Refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
 </LinearLayout>
