@@ -130,6 +130,13 @@ public class ItemsDataSource {
         database.update(SQLiteHelper.TABLE_ITEMS, values, sql, null);
     }
 
+    public void add_to_laundry(long id){
+        ContentValues values = new ContentValues();
+        values.put(SQLiteHelper.COLUMN_ISCLEAN, 0);
+        String sql = "_id = " + id;
+        database.update(SQLiteHelper.TABLE_ITEMS, values, sql, null);
+    }
+
     public long count () {
         long count = DatabaseUtils.queryNumEntries(database, SQLiteHelper.TABLE_ITEMS);
         return count;
