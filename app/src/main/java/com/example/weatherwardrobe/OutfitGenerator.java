@@ -58,16 +58,16 @@ public class OutfitGenerator {
     private Outfit getRandomOutfit(Context context, float currentTemp){
         Outfit out = new Outfit();
         String outerwearType = null;
-        String topType = "t-shirt";
-        String bottomType = "pants";
+        String topType = context.getResources().getString(R.string.tshirt);
+        String bottomType = context.getResources().getString(R.string.pants);
 
         if(currentTemp > 18){
-            bottomType = "shorts";
+            bottomType = context.getResources().getString(R.string.shorts);
         }
 
         if(currentTemp < 5){
-            outerwearType = "coat";
-            topType = "longsleeve";
+            outerwearType = context.getResources().getString(R.string.coat);
+            topType = context.getResources().getString(R.string.longsleeve);
         }
 
         ItemsDataSource dh = new ItemsDataSource(context);

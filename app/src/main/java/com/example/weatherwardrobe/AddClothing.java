@@ -44,10 +44,10 @@ public class AddClothing extends AppCompatActivity {
         colourDropdown = findViewById(R.id.colour_spinner);
 
         //create a list of items for the spinner.
-        String[] colours = new String[]{"white", "black", "grey", "red", "orange", "yellow", "green", "blue", "purple"};
-        String[] types = new String[]{"coat", "tshirt", "longsleeve", "sweater", "pants", "shorts"};
-        // String[] colours = new String[]{getResources().getString(R.string.white), getResources().getString(R.string.black), getResources().getString(R.string.grey), getResources().getString(R.string.red), getResources().getString(R.string.orange), getResources().getString(R.string.yellow), getResources().getString(R.string.green), getResources().getString(R.string.blue), getResources().getString(R.string.purple)};
-        // String[] types = new String[]{getResources().getString(R.string.coat), getResources().getString(R.string.tshirt), getResources().getString(R.string.longsleeve), getResources().getString(R.string.sweater), getResources().getString(R.string.pants), getResources().getString(R.string.shorts)};
+        //String[] colours = new String[]{"white", "black", "grey", "red", "orange", "yellow", "green", "blue", "purple"};
+        //String[] types = new String[]{"coat", "tshirt", "longsleeve", "sweater", "pants", "shorts"};
+         String[] colours = new String[]{getResources().getString(R.string.white), getResources().getString(R.string.black), getResources().getString(R.string.grey), getResources().getString(R.string.red), getResources().getString(R.string.orange), getResources().getString(R.string.yellow), getResources().getString(R.string.green), getResources().getString(R.string.blue), getResources().getString(R.string.purple)};
+         String[] types = new String[]{getResources().getString(R.string.coat), getResources().getString(R.string.tshirt), getResources().getString(R.string.longsleeve), getResources().getString(R.string.sweater), getResources().getString(R.string.pants), getResources().getString(R.string.shorts)};
 
 
         //create an adapter to describe how items are displayed. There's multiple variations but this is the basic one.
