@@ -76,10 +76,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
         ForecastQuery f = new ForecastQuery();
-        SharedPreferences preferences = getSharedPreferences("my_prefs", MODE_PRIVATE);
-        String city = preferences.getString("location","");
-        cityText = findViewById(R.id.city);
-        cityText.setText(city);
+        try {
+            SharedPreferences preferences = getSharedPreferences("my_prefs", MODE_PRIVATE);
+            String city = preferences.getString("location", "");
+            cityText = findViewById(R.id.city);
+            cityText.setText(city);
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+        }
         f.execute();
     }
 
@@ -91,10 +96,15 @@ public class MainActivity extends AppCompatActivity {
         min_temp = findViewById(R.id.min);
         max_temp = findViewById(R.id.max);
         imageView = findViewById(R.id.forecastPicture);
-        SharedPreferences preferences = getSharedPreferences("my_prefs", MODE_PRIVATE);
-        String city = preferences.getString("location","");
-        cityText = findViewById(R.id.city);
-        cityText.setText(city);
+        try {
+            SharedPreferences preferences = getSharedPreferences("my_prefs", MODE_PRIVATE);
+            String city = preferences.getString("location", "");
+            cityText = findViewById(R.id.city);
+            cityText.setText(city);
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
         ForecastQuery f = new ForecastQuery();
         f.execute();
