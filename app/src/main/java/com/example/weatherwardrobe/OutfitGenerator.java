@@ -90,11 +90,21 @@ public class OutfitGenerator {
             out.outerwear = null;
         }
 
-        int topRand = rand.nextInt(topItems.size());
-        out.top = topItems.get(topRand);
+        if (!topItems.isEmpty()) {
+            int topRand = rand.nextInt(topItems.size());
+            out.top = topItems.get(topRand);
+        }
+        else{
+            out.top = null;
+        }
 
-        int botRand = rand.nextInt(bottomItems.size());
-        out.bottom = bottomItems.get(botRand);
+        if (!bottomItems.isEmpty()) {
+            int botRand = rand.nextInt(bottomItems.size());
+            out.bottom = bottomItems.get(botRand);
+        }
+        else{
+            out.bottom = null;
+        }
 
 
         dh.close();

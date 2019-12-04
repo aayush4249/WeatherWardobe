@@ -25,9 +25,9 @@ public class FragmentResult extends Fragment{
     private ImageView outerwearImageView;
     private TextView outerwearTitle, outerwearTypeText, outerwearColourText, outerwearDescText;
     private ImageView topImageView;
-    private TextView topTypeText, topColourText, topDescText;
+    private TextView topTitle, topTypeText, topColourText, topDescText;
     private ImageView bottomImageView;
-    private TextView bottomTypeText, bottomColourText, bottomDescText;
+    private TextView bottomTitle, bottomTypeText, bottomColourText, bottomDescText;
     private Button refreshButton, confirmButton;
 
     private String outerwearType;
@@ -88,10 +88,14 @@ public class FragmentResult extends Fragment{
                 outerwearTypeText = view.findViewById(R.id.outerwearType);
                 outerwearColourText = view.findViewById(R.id.outerwearColour);
                 outerwearDescText = view.findViewById(R.id.outerwearDesc);
+
+                topTitle = view.findViewById(R.id.top_title);
                 topImageView = view.findViewById(R.id.result_top);
                 topTypeText = view.findViewById(R.id.topType);
                 topColourText = view.findViewById(R.id.topColour);
                 topDescText = view.findViewById(R.id.topDesc);
+
+                bottomTitle = view.findViewById(R.id.bottom_title);
                 bottomImageView = view.findViewById(R.id.result_bottom);
                 bottomTypeText = view.findViewById(R.id.bottomType);
                 bottomColourText = view.findViewById(R.id.bottomColour);
@@ -115,36 +119,46 @@ public class FragmentResult extends Fragment{
                     ClothingItem top = generator.selectedOutfit.top;
                     ClothingItem bottom = generator.selectedOutfit.bottom;
 
-                    topByteArr = top.getImg();
-                    if (topByteArr != null){
-                        topImg = BitmapFactory.decodeByteArray(topByteArr, 0, topByteArr.length);
-                    }
-                    topColour = top.getColour();
-                    topType = top.getType();
-                    topDesc = top.getDescription();
-                    bottomByteArr = bottom.getImg();
-                    if (bottomByteArr != null){
-                        bottomImg = BitmapFactory.decodeByteArray(bottomByteArr, 0, bottomByteArr.length);
-                    }
-                    bottomColour = bottom.getColour();
-                    bottomType = bottom.getType();
-                    bottomDesc = bottom.getDescription();
-
                     outerwearTitle.setVisibility(View.GONE);
                     outerwearImageView.setVisibility(View.GONE);
                     outerwearTypeText.setVisibility(View.GONE);
                     outerwearColourText.setVisibility(View.GONE);
                     outerwearDescText.setVisibility(View.GONE);
 
-                    topTypeText.setText(top.getType());
-                    topColourText.setText(top.getColour());
-                    topDescText.setText(top.getDescription());
-                    topImageView.setImageBitmap(topImg);
-                    bottomTypeText.setText(bottom.getType());
-                    bottomColourText.setText(bottom.getColour());
-                    bottomDescText.setText(bottom.getDescription());
-                    bottomImageView.setImageBitmap(bottomImg);
-
+                    if (top != null) {
+                        topByteArr = top.getImg();
+                        if (topByteArr != null) {
+                            topImg = BitmapFactory.decodeByteArray(topByteArr, 0, topByteArr.length);
+                        }
+                        topImageView.setImageBitmap(topImg);
+                        topTypeText.setText(top.getType());
+                        topColourText.setText(top.getColour());
+                        topDescText.setText(top.getDescription());
+                    }
+                    else{
+                        topTitle.setVisibility(View.GONE);
+                        topImageView.setVisibility(View.GONE);
+                        topTypeText.setVisibility(View.GONE);
+                        topColourText.setVisibility(View.GONE);
+                        topDescText.setVisibility(View.GONE);
+                    }
+                    if (bottom != null) {
+                        bottomByteArr = bottom.getImg();
+                        if (bottomByteArr != null) {
+                            bottomImg = BitmapFactory.decodeByteArray(bottomByteArr, 0, bottomByteArr.length);
+                        }
+                        bottomImageView.setImageBitmap(bottomImg);
+                        bottomTypeText.setText(bottom.getType());
+                        bottomColourText.setText(bottom.getColour());
+                        bottomDescText.setText(bottom.getDescription());
+                    }
+                    else{
+                        bottomTitle.setVisibility(View.GONE);
+                        bottomImageView.setVisibility(View.GONE);
+                        bottomTypeText.setVisibility(View.GONE);
+                        bottomColourText.setVisibility(View.GONE);
+                        bottomDescText.setVisibility(View.GONE);
+                    }
                 } else {
                     Log.i(ACTIVITY_NAME, "bundle empty");
                     OutfitGenerator generator = new OutfitGenerator(getContext(), currentTemp);
@@ -165,22 +179,40 @@ public class FragmentResult extends Fragment{
                         outerwearColourText.setVisibility(View.GONE);
                         outerwearDescText.setVisibility(View.GONE);
                     }
-                    topByteArr = top.getImg();
-                    if (topByteArr != null) {
-                        topImg = BitmapFactory.decodeByteArray(topByteArr, 0, topByteArr.length);
+                    if (top != null) {
+                        topByteArr = top.getImg();
+                        if (topByteArr != null) {
+                            topImg = BitmapFactory.decodeByteArray(topByteArr, 0, topByteArr.length);
+                        }
+                        topImageView.setImageBitmap(topImg);
+                        topTypeText.setText(top.getType());
+                        topColourText.setText(top.getColour());
+                        topDescText.setText(top.getDescription());
                     }
-                    topImageView.setImageBitmap(topImg);
-                    topTypeText.setText(top.getType());
-                    topColourText.setText(top.getColour());
-                    topDescText.setText(top.getDescription());
-                    bottomByteArr = bottom.getImg();
-                    if (bottomByteArr != null) {
-                        bottomImg = BitmapFactory.decodeByteArray(bottomByteArr, 0, bottomByteArr.length);
+                    else{
+                        topTitle.setVisibility(View.GONE);
+                        topImageView.setVisibility(View.GONE);
+                        topTypeText.setVisibility(View.GONE);
+                        topColourText.setVisibility(View.GONE);
+                        topDescText.setVisibility(View.GONE);
                     }
-                    bottomImageView.setImageBitmap(bottomImg);
-                    bottomTypeText.setText(bottom.getType());
-                    bottomColourText.setText(bottom.getColour());
-                    bottomDescText.setText(bottom.getDescription());
+                    if (bottom != null) {
+                        bottomByteArr = bottom.getImg();
+                        if (bottomByteArr != null) {
+                            bottomImg = BitmapFactory.decodeByteArray(bottomByteArr, 0, bottomByteArr.length);
+                        }
+                        bottomImageView.setImageBitmap(bottomImg);
+                        bottomTypeText.setText(bottom.getType());
+                        bottomColourText.setText(bottom.getColour());
+                        bottomDescText.setText(bottom.getDescription());
+                    }
+                    else{
+                        bottomTitle.setVisibility(View.GONE);
+                        bottomImageView.setVisibility(View.GONE);
+                        bottomTypeText.setVisibility(View.GONE);
+                        bottomColourText.setVisibility(View.GONE);
+                        bottomDescText.setVisibility(View.GONE);
+                    }
                 }
             }
         });
@@ -190,10 +222,12 @@ public class FragmentResult extends Fragment{
         outerwearTypeText = view.findViewById(R.id.outerwearType);
         outerwearColourText = view.findViewById(R.id.outerwearColour);
         outerwearDescText = view.findViewById(R.id.outerwearDesc);
+        topTitle = view.findViewById(R.id.top_title);
         topImageView = view.findViewById(R.id.result_top);
         topTypeText = view.findViewById(R.id.topType);
         topColourText = view.findViewById(R.id.topColour);
         topDescText = view.findViewById(R.id.topDesc);
+        bottomTitle = view.findViewById(R.id.bottom_title);
         bottomImageView = view.findViewById(R.id.result_bottom);
         bottomTypeText = view.findViewById(R.id.bottomType);
         bottomColourText = view.findViewById(R.id.bottomColour);
@@ -217,35 +251,46 @@ public class FragmentResult extends Fragment{
             top = generator.selectedOutfit.top;
             bottom = generator.selectedOutfit.bottom;
 
-            topByteArr = top.getImg();
-            if (topByteArr != null){
-                topImg = BitmapFactory.decodeByteArray(topByteArr, 0, topByteArr.length);
-            }
-            topColour = top.getColour();
-            topType = top.getType();
-            topDesc = top.getDescription();
-            bottomByteArr = bottom.getImg();
-            if (bottomByteArr != null){
-                bottomImg = BitmapFactory.decodeByteArray(bottomByteArr, 0, bottomByteArr.length);
-            }
-            bottomColour = bottom.getColour();
-            bottomType = bottom.getType();
-            bottomDesc = bottom.getDescription();
-
             outerwearTitle.setVisibility(View.GONE);
             outerwearImageView.setVisibility(View.GONE);
             outerwearTypeText.setVisibility(View.GONE);
             outerwearColourText.setVisibility(View.GONE);
             outerwearDescText.setVisibility(View.GONE);
 
-            topTypeText.setText(top.getType());
-            topColourText.setText(top.getColour());
-            topDescText.setText(top.getDescription());
-            topImageView.setImageBitmap(topImg);
-            bottomTypeText.setText(bottom.getType());
-            bottomColourText.setText(bottom.getColour());
-            bottomDescText.setText(bottom.getDescription());
-            bottomImageView.setImageBitmap(bottomImg);
+            if (top != null) {
+                topByteArr = top.getImg();
+                if (topByteArr != null) {
+                    topImg = BitmapFactory.decodeByteArray(topByteArr, 0, topByteArr.length);
+                }
+                topImageView.setImageBitmap(topImg);
+                topTypeText.setText(top.getType());
+                topColourText.setText(top.getColour());
+                topDescText.setText(top.getDescription());
+            }
+            else{
+                topTitle.setVisibility(View.GONE);
+                topImageView.setVisibility(View.GONE);
+                topTypeText.setVisibility(View.GONE);
+                topColourText.setVisibility(View.GONE);
+                topDescText.setVisibility(View.GONE);
+            }
+            if (bottom != null) {
+                bottomByteArr = bottom.getImg();
+                if (bottomByteArr != null) {
+                    bottomImg = BitmapFactory.decodeByteArray(bottomByteArr, 0, bottomByteArr.length);
+                }
+                bottomImageView.setImageBitmap(bottomImg);
+                bottomTypeText.setText(bottom.getType());
+                bottomColourText.setText(bottom.getColour());
+                bottomDescText.setText(bottom.getDescription());
+            }
+            else{
+                bottomTitle.setVisibility(View.GONE);
+                bottomImageView.setVisibility(View.GONE);
+                bottomTypeText.setVisibility(View.GONE);
+                bottomColourText.setVisibility(View.GONE);
+                bottomDescText.setVisibility(View.GONE);
+            }
 
         } else {
             Log.i(ACTIVITY_NAME, "bundle empty");
@@ -268,22 +313,40 @@ public class FragmentResult extends Fragment{
                 outerwearColourText.setVisibility(View.GONE);
                 outerwearDescText.setVisibility(View.GONE);
             }
-            topByteArr = top.getImg();
-            if (topByteArr != null){
-                topImg = BitmapFactory.decodeByteArray(topByteArr, 0, topByteArr.length);
+            if (top != null) {
+                topByteArr = top.getImg();
+                if (topByteArr != null) {
+                    topImg = BitmapFactory.decodeByteArray(topByteArr, 0, topByteArr.length);
+                }
+                topImageView.setImageBitmap(topImg);
+                topTypeText.setText(top.getType());
+                topColourText.setText(top.getColour());
+                topDescText.setText(top.getDescription());
             }
-            topImageView.setImageBitmap(topImg);
-            topTypeText.setText(top.getType());
-            topColourText.setText(top.getColour());
-            topDescText.setText(top.getDescription());
-            bottomByteArr = bottom.getImg();
-            if (bottomByteArr != null){
-                bottomImg = BitmapFactory.decodeByteArray(bottomByteArr, 0, bottomByteArr.length);
+            else{
+                topTitle.setVisibility(View.GONE);
+                topImageView.setVisibility(View.GONE);
+                topTypeText.setVisibility(View.GONE);
+                topColourText.setVisibility(View.GONE);
+                topDescText.setVisibility(View.GONE);
             }
-            bottomImageView.setImageBitmap(bottomImg);
-            bottomTypeText.setText(bottom.getType());
-            bottomColourText.setText(bottom.getColour());
-            bottomDescText.setText(bottom.getDescription());
+            if (bottom != null) {
+                bottomByteArr = bottom.getImg();
+                if (bottomByteArr != null) {
+                    bottomImg = BitmapFactory.decodeByteArray(bottomByteArr, 0, bottomByteArr.length);
+                }
+                bottomImageView.setImageBitmap(bottomImg);
+                bottomTypeText.setText(bottom.getType());
+                bottomColourText.setText(bottom.getColour());
+                bottomDescText.setText(bottom.getDescription());
+            }
+            else{
+                bottomTitle.setVisibility(View.GONE);
+                bottomImageView.setVisibility(View.GONE);
+                bottomTypeText.setVisibility(View.GONE);
+                bottomColourText.setVisibility(View.GONE);
+                bottomDescText.setVisibility(View.GONE);
+            }
         }
 
         return view;
