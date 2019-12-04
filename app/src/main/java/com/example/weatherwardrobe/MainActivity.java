@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     TextView current_temp;
     TextView min_temp;
     TextView max_temp;
+    TextView cityText;
 
     public void refresh(View v){
         ForecastQuery f = new ForecastQuery();
@@ -75,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
         ForecastQuery f = new ForecastQuery();
+        SharedPreferences preferences = getSharedPreferences("my_prefs", MODE_PRIVATE);
+        String city = preferences.getString("location","");
+        cityText = findViewById(R.id.city);
+        cityText.setText(city);
         f.execute();
     }
 
@@ -86,6 +91,10 @@ public class MainActivity extends AppCompatActivity {
         min_temp = findViewById(R.id.min);
         max_temp = findViewById(R.id.max);
         imageView = findViewById(R.id.forecastPicture);
+        SharedPreferences preferences = getSharedPreferences("my_prefs", MODE_PRIVATE);
+        String city = preferences.getString("location","");
+        cityText = findViewById(R.id.city);
+        cityText.setText(city);
 
         ForecastQuery f = new ForecastQuery();
         f.execute();
