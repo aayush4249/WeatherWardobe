@@ -99,4 +99,11 @@ clothes are cleaned. The Account button lets you see and edit your account infor
     <string name="about">About</string>
     <string name="guide">User Guide</string>
     <string name="Account">Account</string>
+
+    <!-- result -->
+    <string name="top">Top:</string>
+    <string name="bottom">Bottom:</string>
+    <string name="confirm">Confirm</string>
+    <string name="result_refresh">Refresh</string>
+    <string name="outer_wear">Outer Wear:</string>
 </resources>

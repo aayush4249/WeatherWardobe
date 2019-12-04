@@ -101,4 +101,11 @@ ubrania są sprzątane. Przycisk Konto pozwala wyświetlać i edytować informac
     <string name="about">O Tym</string>
     <string name="guide">Podręcznik Użytkownika</string>
     <string name="Account">Konto</string>
+
+    <!-- result -->
+    <string name="top">Top:</string>
+    <string name="bottom">Dolny:</string>
+    <string name="confirm">Potwierdzać</string>
+    <string name="result_refresh">Odświeżać</string>
+    <string name="outer_wear">Odzież Wierzchnia:</string>
 </resources>
